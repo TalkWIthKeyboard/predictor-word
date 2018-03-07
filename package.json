@@ -1,0 +1,12 @@
+{
+  "name": "predictor-word",
+  "version": "1.0.0",
+  "description": "This is a image includes elasticsearch-ik and elasticsearch-pinyin.",
+  "scripts": {
+    "build": "docker build . -t predictor-word:latest && docker-compose up",
+    "rebuild": "docker build . -t predictor-word:latest --no-cache && docker-compose up",
+    "test": "docker-compose up --force-recreate"
+  },
+  "author": "TalkWithKeyboard",
+  "license": "ISC"
+}
