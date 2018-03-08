@@ -24,5 +24,5 @@ $ npm run build
 ```
 
 ## Tips
-+ 因为作者是将该镜像部署到廉价腾讯云服务器使用，所以对 `elasticsearch` 进行了限制，如果有充分的资源可以注释掉 `docker-compose.yml` 中的 `-Xms512m -Xmx512m`
++ 因为作者是将该镜像部署到廉价腾讯云服务器使用，所以对 `elasticsearch` 的内存使用进行了限制（默认是**2G**），如果有充分的资源可以注释掉 `docker-compose.yml` 中的 `ES_JAVA_OPTS: -Xms512m -Xmx512m`
 + 关闭了访问需要登录的设置：`xpack.security.enabled`
