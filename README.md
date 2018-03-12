@@ -62,6 +62,76 @@ PUT localhost:9200/index
 }
 ```
 
+## Example
+```
+GET localhost:9200/index/_analyze?analyzer=ik_china_english_smart&text=hello你好
+
+{
+    "tokens": [
+        {
+            "token": "hello",
+            "start_offset": 0,
+            "end_offset": 5,
+            "type": "ENGLISH",
+            "position": 0
+        },
+        {
+            "token": "你好",
+            "start_offset": 5,
+            "end_offset": 7,
+            "type": "CN_WORD",
+            "position": 1
+        }
+    ]
+}
+```
+
+```
+GET localhost:9200/index/_analyze?analyzer=ik_letter_smart&text=hello你好
+
+{
+    "tokens": [
+        {
+            "token": "hello",
+            "start_offset": 0,
+            "end_offset": 5,
+            "type": "ENGLISH",
+            "position": 0
+        },
+        {
+            "token": "nh",
+            "start_offset": 5,
+            "end_offset": 7,
+            "type": "CN_WORD",
+            "position": 1
+        }
+    ]
+}
+```
+
+```
+GET localhost:9200/index/_analyze?analyzer=ik_china_english_smart&text=hello你好
+
+{
+    "tokens": [
+        {
+            "token": "hello",
+            "start_offset": 0,
+            "end_offset": 5,
+            "type": "ENGLISH",
+            "position": 0
+        },
+        {
+            "token": "nihao",
+            "start_offset": 5,
+            "end_offset": 7,
+            "type": "CN_WORD",
+            "position": 1
+        }
+    ]
+}
+```
+
 ## Tips
 + 因为作者是将该镜像部署到廉价腾讯云服务器使用，所以对 `elasticsearch` 的内存使用进行了限制（默认是**2G**），如果有充分的资源可以注释掉 `docker-compose.yml` 中的 `ES_JAVA_OPTS: -Xms512m -Xmx512m`
 + 关闭了访问需要登录的设置：`xpack.security.enabled`
