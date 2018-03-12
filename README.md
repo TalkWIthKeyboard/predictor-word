@@ -4,7 +4,7 @@
 ## Version
 + **elasticsearch** -> 5.1.1
 + **ik** -> 5.1.1
-+ **pinyin** -> 5.1.1
++ **lc-pinyin** -> 5.1.1
 
 ## Require
 + docker
