@@ -7,7 +7,7 @@ RUN mkdir -p /usr/share/elasticsearch/plugins/ik
 RUN mkdir -p /usr/share/elasticsearch/plugins/lc-pinyin
 ADD elasticsearch-analysis-ik-5.1.1.zip /usr/share/elasticsearch/plugins/ik
 RUN cd /usr/share/elasticsearch/plugins/ik && unzip elasticsearch-analysis-ik-5.1.1.zip
-ADD elasticsearch-analysis-lc-pinyin-5.1.1.zip /usr/share/elasticsearch/plugins/pinyin
+ADD elasticsearch-analysis-lc-pinyin-5.1.1.zip /usr/share/elasticsearch/plugins/lc-pinyin
 RUN cd /usr/share/elasticsearch/plugins/lc-pinyin && unzip elasticsearch-analysis-lc-pinyin-5.1.1.zip
 # change the authority of user "elasticsearch"
 RUN echo http://dl-2.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories
